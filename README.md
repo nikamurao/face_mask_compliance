@@ -37,6 +37,9 @@ The images were uniformly resized to 224 x 224 prior to model training and proce
 
 - INSERT BASELINE PERFORMANCE HERE 
 
+
+
+
 **Leveraging on existing model architectures**
 
 To select the model architecture best suited to this problem, I evaluated the performance under the following scenarios:  
@@ -52,10 +55,15 @@ The ResNet model was then optimized for the number of layers to unfreeze and the
 
 - INSERT PERFORMANCE.
 
+
+
+
+
 Looking at the predictions for each class, it is important to highlight the following: 
 1) Model achieved top performance on identifying subjects without masks 
 - F1 score of 0.99
 - Out of the subjects who are not wearing masks, the model misses to identify only 2% of the group. Keeping this number to a minimum is crucial from a practical standpoint as these are the individuals who need to be prompted to comply with the protocols.   
+
 2) The lowest predictive performance on a class still surpassed our benchmark, achieving a 95% recall
 - The error mainly comes from misclassifying the 5% of subjects with properly worn masks as not having worn them properly. If implemented, making this type of mistake is more ‘forgivable’ as it leans towards a more cautious reaction.
 
