@@ -6,7 +6,8 @@ While authorities enforce the mandatory use of face masks as a preventive measur
 
 Such widespread practice is severely undermining the effectiveness of measures put in place and to the extent it provides a false sense of confidence to the public, stricter adherence to the regulation need to be implemented especially with infectious variants spreading.
 
-This challenge presents an interesting application of computer vision which the project aims to explore. **Can we use deep learning to differentiate between a person not wearing a face mask and wearing one? And if so, if he/she is wearing it properly?**
+This challenge presents an interesting application of computer vision which the project aims to explore. 
+**Can we use deep learning to differentiate between a person not wearing a face mask and wearing one? And if so, if he/she is wearing it properly?**
 
 Serving primarily as a proof-of-concept, this project seeks to explore the potential of using computer vision to actively monitor proper compliance of wearing face masks, which could be valuable to authorities and even private establishments who would like to enforce the use of face masks more strictly. 
 
