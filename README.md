@@ -35,7 +35,7 @@ The images were uniformly resized to 224 x 224 prior to model training and proce
 
 **Baseline performance**
 
-- INSERT BASELINE PERFORMANCE HERE 
+- INSERT BASELINE PERFORMANCE HERE. 
 
 
 
@@ -49,14 +49,14 @@ To select the model architecture best suited to this problem, I evaluated the pe
 
 Transfer learning has allowed us to surpass the benchmark accuracy with ResNet50 consistently performing better than the other architectures across the three scenarios. 
 
-<img src="https://user-images.githubusercontent.com/70846659/134142328-f4d6bdba-8cd9-448e-a2e5-0787ba66d18c.png" width="600" height="250" />
+<img src="https://user-images.githubusercontent.com/70846659/134142328-f4d6bdba-8cd9-448e-a2e5-0787ba66d18c.png" width="700" height="250" />
 
 The ResNet model was then optimized for the number of layers to unfreeze and the learning rate. 
 
 - INSERT PERFORMANCE.
 
 
-
+<img src="https://user-images.githubusercontent.com/70846659/134152179-1a56a176-da42-41e3-a0ba-a1aab8a8928f.png" width="450" height="600" />
 
 
 Looking at the predictions for each class, it is important to highlight the following: 
