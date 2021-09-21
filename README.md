@@ -2,13 +2,13 @@
 <img src="https://user-images.githubusercontent.com/70846659/134135944-962fdbb7-e5cf-461b-ad9b-e057aff07287.png" width="600" height="350" />
 
 ## The problem
-While authorities enforce the mandatory use of face masks as a preventive measure against COVID-19 transmission,  there are many cases half-compliance and sham compliance. "Many would wear masks, but “slide them down onto their chins or take them off completely while talking to someone on the street or speaking on the phone”. In other cases, the mask is not properly positioned, exposing the nose, mouth or chin. 
+While authorities enforce the mandatory use of face masks as a preventive measure against COVID-19 transmission,  there are many cases of half-compliance and sham compliance. Many would wear masks, but “slide them down onto their chins or take them off completely while talking to someone on the street or speaking on the phone”. In other cases, the mask is not properly positioned, exposing the nose, mouth or chin. 
 
-Such widespread practice is severely undermining the effectiveness of measures put in place and to the extent it provides a false sense of confidence to the public, stricter adherence to the regulation need to be implemented especially with more infectious variants spreading.
+Such widespread practice is severely undermining the effectiveness of measures put in place and to the extent it provides a false sense of confidence to the public, stricter adherence to the regulation need to be implemented especially with infectious variants spreading.
 
-This challenge presents an interesting application of computer vision which the project aims to explore. Can we use deep learning to differentiate between a person not wearing a face mask and wearing one? And if so, is he/she wearing it properly? 
+This challenge presents an interesting application of computer vision which the project aims to explore. **Can we use deep learning to differentiate between a person not wearing a face mask and wearing one? And if so, if he/she is wearing it properly?**
 
-Serving primarily as a proof-of-concept, this project seeks to demonstrate the potential of using computer vision to actively monitor proper compliance of wearing face masks. This could be valuable to authorities and even private establishments who would like to enforce the use of face masks more strictly. 
+Serving primarily as a proof-of-concept, this project seeks to explore the potential of using computer vision to actively monitor proper compliance of wearing face masks, which could be valuable to authorities and even private establishments who would like to enforce the use of face masks more strictly. 
 
 ## Objective and scope 
 Achieving a good level of accuracy for all three cases will be crucial for implementation. Hence, the main objective is to reach at least 90% accuracy across all three classes (‘without mask’, ‘with mask’, ‘incorrectly worn’). Special attention will be given to the type of mistakes the model makes. Specifically, there is some challenge expected in discriminating between the proper and the improper use of masks but less in detecting whether the subject is wearing a face mask or not.  
@@ -35,7 +35,7 @@ The images were uniformly resized to 224 x 224 prior to model training and proce
 
 **Baseline performance**
 
-INSERT BASELINE PERFORMANCE HERE 
+- INSERT BASELINE PERFORMANCE HERE 
 
 **Leveraging on existing model architectures**
 
@@ -50,8 +50,7 @@ Transfer learning has allowed us to surpass the benchmark accuracy with ResNet50
 
 The ResNet model was then optimized for the number of layers to unfreeze and the learning rate. 
 
-INSERT PERFORMANCe.
-
+- INSERT PERFORMANCE.
 
 ## Conclusion
 Transfer learning has been key to unlocking superior model performance. Using the ResNet50 architecture, we were able to achieve a 97% accuracy rate on the test set, demonstrating the potential of using computer vision to enforce stricter compliance to face mask regulations. 
