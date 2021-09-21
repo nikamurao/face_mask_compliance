@@ -30,12 +30,16 @@ A few examples for each label is provided below.
 <img src="https://user-images.githubusercontent.com/70846659/134144149-b76bc41b-c41e-4e53-bfa1-88167617c9e2.png" width="700" height="600" />
 
 ## Modelling
-The images were uniformly resized to 224 x 224 prior to model training and processed in batches of 128. The models were trained with an Adam optimiser for 50 epochs although early stopping was implemented based on decreasing model loss. Before training on more advanced neural architectures, I used a 3-block VGG-style architecture to establish a baseline performance level, upon which the succeeding models will be benchmarked against. 
+The images were uniformly resized to 224 x 224 prior to model training and processed in batches of 128. The models were trained with an Adam optimiser for 50 epochs although early stopping was implemented based on decreasing model loss. 
 
 **Baseline performance**
 
-<img src="https://user-images.githubusercontent.com/70846659/134152811-9eb04fd0-c23f-41ca-85b5-e586178b4219.png" width="450" height="600" />
+Before training on more advanced neural architectures, I used a 3-block VGG-style model to establish a baseline performance level, upon which the succeeding models will be benchmarked against. 
 
+<img src="https://user-images.githubusercontent.com/70846659/134152811-9eb04fd0-c23f-41ca-85b5-e586178b4219.png" width="450" height="600"/>
+
+
+While achieving a decent performance of 90% accuracy, classification of subjects without masks requires further improvement as 13% are erroneously predicted as having masks.
 
 **Leveraging on existing model architectures**
 
@@ -48,17 +52,17 @@ Transfer learning has allowed us to surpass the benchmark accuracy with ResNet50
 
 <img src="https://user-images.githubusercontent.com/70846659/134142328-f4d6bdba-8cd9-448e-a2e5-0787ba66d18c.png" width="700" height="250" />
 
-The ResNet model was then optimized for the number of layers to unfreeze and the learning rate. The final model was trained with a 0.001 learning rate with all layers of the base model unfrozen.
+The ResNet model was then optimized for the number of layers to unfreeze and the learning rate. The best model was trained with a 0.001 learning rate with all layers of the base model fine-tuned.
 
 <img src="https://user-images.githubusercontent.com/70846659/134161727-e134bea3-4dd3-432c-90c2-96e27c488c02.png" width="450" height="600" />
 
-This has achieved a 97% accuracy rate. Looking at the predictions for each class, it is important to highlight the following: 
+This achieved a 97% accuracy rate. Looking at the predictions for each class, it is important to highlight the following: 
 1) Model achieved top performance on identifying subjects without masks 
 - F1 score of 0.99
 - Out of the subjects who are not wearing masks, the model misses to identify only 2% of the group. Keeping this number to a minimum is crucial from a practical standpoint as these are the individuals who need to be prompted to comply with the protocols.   
 
-2) The lowest predictive performance on a class still surpassed our benchmark, achieving a 95% recall
-- The error mainly comes from misclassifying the 5% of subjects with properly worn masks as not having worn them properly. If implemented, making this type of mistake is more ‘forgivable’ as it leans towards a more cautious reaction.
+2) The lowest predictive performance on a class still surpassed our benchmark, achieving a 97% recall
+- The error mainly comes from misclassifying the 3% of subjects with properly worn masks as not having worn them properly. If implemented, making this type of mistake is more ‘forgivable’ as it leans towards a more cautious reaction.
 
 ## Conclusion
 Using the ResNet50 architecture, we were able to achieve a 97% accuracy rate on the test set, demonstrating the potential of using computer vision to enforce stricter compliance to face mask regulations. 
