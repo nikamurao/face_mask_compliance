@@ -13,7 +13,6 @@ Serving primarily as a proof-of-concept, this project seeks to explore the poten
 
 ## Objective and scope 
 Achieving a good level of accuracy for all three cases will be crucial for implementation. Hence, the main objective is to reach at least 90% accuracy across all three classes (‘without mask’, ‘with mask’, ‘incorrectly worn’). Special attention will be given to the type of mistakes the model makes. Specifically, there is some challenge expected in discriminating between the proper and the improper use of masks but less in detecting whether the subject is wearing a face mask or not.  
-
 In improving the implementation of preventive measures against Covid, there are undeniably other factors to consider such as the type of face mask worn. However, this will be out of scope and can be considered in a further study following the success of this project. Additionally, the scope is restricted to the detection of correctly worn face masks on individuals rather than on groups of people. The main deliverables of the project are code, model and accompanying report for documentation.
 
 ## The dataset 
@@ -52,6 +51,13 @@ Transfer learning has allowed us to surpass the benchmark accuracy with ResNet50
 The ResNet model was then optimized for the number of layers to unfreeze and the learning rate. 
 
 - INSERT PERFORMANCE.
+
+Looking at the predictions for each class, it is important to highlight the following: 
+1) Model achieved top performance on identifying subjects without masks 
+- F1 score of 0.99
+- Out of the subjects who are not wearing masks, the model misses to identify only 2% of the group. Keeping this number to a minimum is crucial from a practical standpoint as these are the individuals who need to be prompted to comply with the protocols.   
+2) The lowest predictive performance on a class still surpassed our benchmark, achieving a 95% recall
+- The error mainly comes from misclassifying the 5% of subjects with properly worn masks as not having worn them properly. If implemented, making this type of mistake is more ‘forgivable’ as it leans towards a more cautious reaction.
 
 ## Conclusion
 Transfer learning has been key to unlocking superior model performance. Using the ResNet50 architecture, we were able to achieve a 97% accuracy rate on the test set, demonstrating the potential of using computer vision to enforce stricter compliance to face mask regulations. 
