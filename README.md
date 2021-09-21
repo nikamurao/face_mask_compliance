@@ -2,18 +2,17 @@
 <img src="https://user-images.githubusercontent.com/70846659/134135944-962fdbb7-e5cf-461b-ad9b-e057aff07287.png" width="600" height="350" />
 
 ## The problem
-While authorities enforce the mandatory use of face masks as a preventive measure against COVID-19 transmission,  there are many cases of half-compliance and sham compliance. Many would wear masks, but “slide them down onto their chins or take them off completely while talking to someone on the street or speaking on the phone”. In other cases, the mask is not properly positioned, exposing the nose, mouth or chin. 
+While authorities enforce the mandatory use of face masks as a preventive measure against COVID-19 transmission,  there are many cases of half-compliance or sham compliance. Many would wear masks, but slide them down onto their chins or take them off completely while talking to someone. In other cases, the mask is not properly positioned, exposing the nose, mouth or chin. 
 
 Such widespread practice is severely undermining the effectiveness of measures put in place and to the extent it provides a false sense of confidence to the public, stricter adherence to the regulation need to be implemented especially with infectious variants spreading.
 
 This challenge presents an interesting application of computer vision which the project aims to explore. 
-**Can we use deep learning to differentiate between a person not wearing a face mask and wearing one? And if so, if he/she is wearing it properly?**
-
-Serving primarily as a proof-of-concept, this project seeks to explore the potential of using computer vision to actively monitor proper compliance of wearing face masks, which could be valuable to authorities and even private establishments who would like to enforce the use of face masks more strictly. 
+**Can we use deep learning to distinguish between a person who is not wearing a mask and one who is? And if so, whether he/she is wearing the mask properly?** 
 
 ## Objective and scope 
-Achieving a good level of accuracy for all three cases will be crucial for implementation. Hence, the main objective is to reach at least 90% accuracy across all three classes (‘without mask’, ‘with mask’, ‘incorrectly worn’). Special attention will be given to the type of mistakes the model makes. Specifically, there is some challenge expected in discriminating between the proper and the improper use of masks but less in detecting whether the subject is wearing a face mask or not.  
-In improving the implementation of preventive measures against Covid, there are undeniably other factors to consider such as the type of face mask worn. However, this will be out of scope and can be considered in a further study following the success of this project. Additionally, the scope is restricted to the detection of correctly worn face masks on individuals rather than on groups of people. The main deliverables of the project are code, model and accompanying report for documentation.
+Achieving a good level of accuracy for all three cases will be crucial for implementation. Hence, the main objective is to reach at least 90% accuracy across all three classes (‘without mask’, ‘with mask’, ‘incorrectly worn’). Special attention will be given to the type of mistakes the model makes. Specifically, there is some challenge expected in identifying the proper use of masks but less so in classifying whether the subject is wearing a face mask (regardless of positioning). 
+
+In improving the implementation of preventive measures against Covid, there are undeniably other factors to consider such as the type of face mask worn. However, this will be out of scope and can be considered in a further study following the success of this project. Additionally, the scope is restricted to the detection of correctly worn face masks on individuals rather than on groups of people.
 
 ## The dataset 
 While there are many available datasets containing images of people wearing masks, there are not enough for the improper use of face masks (i.e. not covering nose, mouth, chin). Hence, a combination of a few sources were used to train the model. 
@@ -49,12 +48,11 @@ Transfer learning has allowed us to surpass the benchmark accuracy with ResNet50
 
 <img src="https://user-images.githubusercontent.com/70846659/134142328-f4d6bdba-8cd9-448e-a2e5-0787ba66d18c.png" width="700" height="250" />
 
-The ResNet model was then optimized for the number of layers to unfreeze and the learning rate. 
-
+The ResNet model was then optimized for the number of layers to unfreeze and the learning rate. The final model was trained with a 0.001 learning rate with all layers of the base model unfrozen.
 
 <img src="https://user-images.githubusercontent.com/70846659/134152179-1a56a176-da42-41e3-a0ba-a1aab8a8928f.png" width="450" height="600" />
 
-
+This has achieved 
 Looking at the predictions for each class, it is important to highlight the following: 
 1) Model achieved top performance on identifying subjects without masks 
 - F1 score of 0.99
