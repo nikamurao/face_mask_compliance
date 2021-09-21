@@ -7,6 +7,7 @@ While authorities enforce the mandatory use of face masks as a preventive measur
 Such widespread practice is severely undermining the effectiveness of measures put in place and to the extent it provides a false sense of confidence to the public, stricter adherence to the regulation need to be implemented especially with infectious variants spreading.
 
 This challenge presents an interesting application of computer vision which the project aims to explore. 
+
 **Can we use deep learning to distinguish between a person who is not wearing a mask and one who is? And if so, whether he/she is wearing the mask properly?** 
 
 ## Objective and scope 
