@@ -50,10 +50,9 @@ Transfer learning has allowed us to surpass the benchmark accuracy with ResNet50
 
 The ResNet model was then optimized for the number of layers to unfreeze and the learning rate. The final model was trained with a 0.001 learning rate with all layers of the base model unfrozen.
 
-<img src="https://user-images.githubusercontent.com/70846659/134152179-1a56a176-da42-41e3-a0ba-a1aab8a8928f.png" width="450" height="600" />
+<img src="![image](https://user-images.githubusercontent.com/70846659/134161727-e134bea3-4dd3-432c-90c2-96e27c488c02.png)" width="450" height="600" />
 
-This has achieved 
-Looking at the predictions for each class, it is important to highlight the following: 
+This has achieved a 97% accuracy rate. Looking at the predictions for each class, it is important to highlight the following: 
 1) Model achieved top performance on identifying subjects without masks 
 - F1 score of 0.99
 - Out of the subjects who are not wearing masks, the model misses to identify only 2% of the group. Keeping this number to a minimum is crucial from a practical standpoint as these are the individuals who need to be prompted to comply with the protocols.   
@@ -62,7 +61,7 @@ Looking at the predictions for each class, it is important to highlight the foll
 - The error mainly comes from misclassifying the 5% of subjects with properly worn masks as not having worn them properly. If implemented, making this type of mistake is more ‘forgivable’ as it leans towards a more cautious reaction.
 
 ## Conclusion
-Transfer learning has been key to unlocking superior model performance. Using the ResNet50 architecture, we were able to achieve a 97% accuracy rate on the test set, demonstrating the potential of using computer vision to enforce stricter compliance to face mask regulations. 
+Using the ResNet50 architecture, we were able to achieve a 97% accuracy rate on the test set, demonstrating the potential of using computer vision to enforce stricter compliance to face mask regulations. 
 
 It is worth noting, however, that this performance level is based on the specific dataset used for the project which has its limitations. Majority of incorrectly worn face masks samples were synthetic, edited surgical face masks overlaid on the subjects’ faces, raising possible challenges in the generalizability of the model, specifically in detecting non-surgical incorrectly worn masks. Moreover, the training dataset could benefit from increased diversity in terms of age and race. Hence, before implementation, model performance should be tested against these possible shortcomings.
 
