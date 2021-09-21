@@ -18,13 +18,17 @@ In improving the implementation of preventive measures against Covid, there are 
 ## The dataset 
 While there are many available datasets containing images of people wearing masks, there are not enough for the improper use of face masks (i.e. not covering nose, mouth, chin). Hence, a combination of a few sources were used to train the model. 
 
-![image](https://user-images.githubusercontent.com/70846659/134138532-c15a548f-805d-4159-9d21-7e3d8e66161e.png)
+<img src="https://user-images.githubusercontent.com/70846659/134138532-c15a548f-805d-4159-9d21-7e3d8e66161e.png" width="500" height="300" />
 
 - MaskedFace-Net: https://github.com/cabani/MaskedFace-Net 
 - Alibaba Tianchi: https://tianchi.aliyun.com/dataset/dataDetail?dataId=93724
 - FaceMaskDetection: https://github.com/chandrikadeb7/Face-Mask-Detection
 
 The combined final dataset created a total of 6,041 images (2,015 examples of correctly worn masks, 2,096 examples of incorrectly worn masks, and 1,930 examples of no mask worn) which were then split 60/20/20 between train, development and test sets. 
+
+A few examples for each label is provided below. 
+
+<img src="https://user-images.githubusercontent.com/70846659/134144149-b76bc41b-c41e-4e53-bfa1-88167617c9e2.png" width="700" height="600" />
 
 ## Modelling
 The images were uniformly resized to 224 x 224 prior to model training and processed in batches of 128. The models were trained with an Adam optimiser for 50 epochs although early stopping was implemented based on decreasing model loss. Before training on more advanced neural architectures, I used a 3-block VGG-style architecture to establish a baseline performance level, upon which the succeeding models will be benchmarked against. 
@@ -40,16 +44,13 @@ To select the model architecture best suited to this problem, I evaluated the pe
 2) Fine-tuning the pre-trained model by unfreezing and retraining the last two layers; and
 3) Learning the weights of the model architecture by unfreezing the base model 
 
-While the classes are not exactly equal, the imbalance is not significant so the models were compared based on validation accuracy. Other performance metrics such as precision, recall, area under the curve, precision-recall curve, and (categorical cross-entropy) loss were also monitored throughout the training phase to check for potential overfitting.  
+Transfer learning has allowed us to surpass the benchmark accuracy with ResNet50 consistently performing better than the other architectures across the three scenarios. 
 
-The results show the 
+<img src="https://user-images.githubusercontent.com/70846659/134142328-f4d6bdba-8cd9-448e-a2e5-0787ba66d18c.png" width="600" height="250" />
 
-ResNet50 architecture performs s
-<img src="https://user-images.githubusercontent.com/70846659/134142328-f4d6bdba-8cd9-448e-a2e5-0787ba66d18c.png" width="500" height="200" />
+The ResNet model was then optimized for the number of layers to unfreeze and the learning rate. 
 
-
-After optimizing for the number of layers to unfreeze and the learning rate, the best model achieves an accuracy
-
+INSERT PERFORMANCe.
 
 
 ## Conclusion
