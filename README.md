@@ -50,7 +50,7 @@ Transfer learning has allowed us to surpass the benchmark accuracy with ResNet50
 
 The ResNet model was then optimized for the number of layers to unfreeze and the learning rate. The final model was trained with a 0.001 learning rate with all layers of the base model unfrozen.
 
-<img src="![image](https://user-images.githubusercontent.com/70846659/134161727-e134bea3-4dd3-432c-90c2-96e27c488c02.png)" width="450" height="600" />
+<img src="https://user-images.githubusercontent.com/70846659/134161727-e134bea3-4dd3-432c-90c2-96e27c488c02.png" width="450" height="600" />
 
 This has achieved a 97% accuracy rate. Looking at the predictions for each class, it is important to highlight the following: 
 1) Model achieved top performance on identifying subjects without masks 
